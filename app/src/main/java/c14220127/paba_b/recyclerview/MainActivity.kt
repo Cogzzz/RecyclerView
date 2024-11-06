@@ -26,29 +26,33 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         _rvwayang = findViewById<RecyclerView>(R.id.rvWayang)
+        siapkanData()
+        TambahData()
+        TampilkanData()
+    }
 
-        fun SiapkanData() {
-            _nama = resources.getStringArray(R.array.namaWayang)
-            _karakter = resources.getStringArray(R.array.karakterUtamaWayang)
-            _gambar = resources.getStringArray(R.array.gambarWayang)
-            _deskripsi = resources.getStringArray(R.array.deskripsiWayang)
-        }
+    fun siapkanData() {
+        _nama = resources.getStringArray(R.array.namaWayang)
+        _karakter = resources.getStringArray(R.array.karakterUtamaWayang)
+        _gambar = resources.getStringArray(R.array.gambarWayang)
+        _deskripsi = resources.getStringArray(R.array.deskripsiWayang)
+    }
 
-        fun TmabahData() {
-            for (position in _nama.indices) {
-                val data = wayang(
-                    _gambar[position],
-                    _nama[position],
-                    _karakter[position],
-                    _deskripsi[position]
-                )
-                arWayang.add(data)
-            }
+    fun TambahData() {
+        for (position in _nama.indices) {
+            val data = wayang(
+                _gambar[position],
+                _nama[position],
+                _karakter[position],
+                _deskripsi[position]
+            )
+            arWayang.add(data)
         }
-        fun TampilkanData() {
-            _rvwayang.layoutManager = LinearLayoutManager(this)
-            _rvwayang.adapter = adapterRecView(arWayang)
+    }
 
-        }
+    fun TampilkanData() {
+        _rvwayang.layoutManager = LinearLayoutManager(this)
+        _rvwayang.adapter = adapterRecView(arWayang)
+
     }
 }
