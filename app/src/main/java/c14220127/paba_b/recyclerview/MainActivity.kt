@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class MainActivity : AppCompatActivity() {
     private lateinit var _nama: Array<String>
@@ -51,8 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun TampilkanData() {
-        _rvwayang.layoutManager = LinearLayoutManager(this)
+        _rvwayang.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         _rvwayang.adapter = adapterRecView(arWayang)
-
     }
 }

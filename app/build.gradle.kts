@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "c14220127.paba_b.recyclerview"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "c14220127.paba_b.recyclerview"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -45,4 +45,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.picasso)
 }
